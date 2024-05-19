@@ -7,28 +7,32 @@ In this project Naive Bayes algorithm is use to create a model that can classify
 Being able to identify spam messages is a binary classification problem as messages are classified as either 'Spam' or 'Not Spam' and nothing else. Also, this is a supervised learning problem, as we will be feeding a labelled dataset into the model, that it can learn from, to make future predictions.
 
 
-### Problem Statement
+## Problem Statement
 Build an AI model that can classify SMS messages as spam or legitimate. Use techniques like TF-IDF or word embeddings with classifiers like Naive Bayes, Logistic Regression, or Support Vector Machines to identify spam messages.
 
-### About Dataset
+## About Dataset
 The SMS Spam Collection is a set of SMS tagged messages that have been collected for SMS Spam research. It contains one set of SMS messages in English of 5,574 messages, tagged acording being ham (legitimate) or spam.
 
 https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset/data
 
-### Project Pipeline
+## Project Pipeline
 The project pipeline can be briefly summarized in the following four steps:
 
-#### Step - 1
-Data Understanding: Here, we need to load the data and understand the features present in it. This would help us choose the features that we will need for your final model.
+## Step - 1
+### Data Understanding: 
+Here, we need to load the data and understand the features present in it. This would help us choose the features that we will need for your final model.
 
-#### Step - 2
-Exploratory data analytics (EDA): Normally, in this step, we need to perform univariate and bivariate analyses of the data, followed by feature transformations, if necessary. However, we can check if there is any skewness in the data and try to mitigate it, as it might cause problems during the model-building phase.
+## Step - 2
+### Exploratory data analytics (EDA):
+Normally, in this step, we need to perform univariate and bivariate analyses of the data, followed by feature transformations, if necessary. However, we can check if there is any skewness in the data and try to mitigate it, as it might cause problems during the model-building phase.
 
-#### Step - 3
-Train/Test Split: Now we are familiar with the train/test split, which we can perform in order to check the performance of our models with unseen data.
+## Step - 3
+### Train/Test Split: 
+Now we are familiar with the train/test split, which we can perform in order to check the performance of our models with unseen data.
 
-#### Step - 4
-Naive Bayes implementation: Naive Bayes methods are a set of supervised learning algorithms based on applying Bayes’ theorem with the “naive” assumption of independence between every pair of features. Given a class variable y and a dependent feature vector x_1 through x_n, Bayes’ theorem states the following relationship:
+## Step - 4
+### Naive Bayes implementation: 
+Naive Bayes methods are a set of supervised learning algorithms based on applying Bayes’ theorem with the “naive” assumption of independence between every pair of features. Given a class variable y and a dependent feature vector x_1 through x_n, Bayes’ theorem states the following relationship:
 
 P(y | x_1,..., x_n) = {P(y) P(x_1, ..., x_n | y)}/{P(x_1,..., x_n)}
 
@@ -62,8 +66,9 @@ Specifically, we will be using the multinomial Naive Bayes implementation. This 
 
 Now that predictions have been made on our test set, we need to check the accuracy of our predictions.
 
-#### Step - 5
-Model Evaluation: We need to evaluate the models using appropriate evaluation metrics. Note that since the data is imbalanced it is is more important to identify which are fraudulent transactions accurately than the non-fraudulent. We need to choose an appropriate evaluation metric which reflects this business goal.
+## Step - 5
+### Model Evaluation: 
+We need to evaluate the models using appropriate evaluation metrics. Note that since the data is imbalanced it is is more important to identify which are fraudulent transactions accurately than the non-fraudulent. We need to choose an appropriate evaluation metric which reflects this business goal.
 Now that we have made predictions on our test set, our next goal is to evaluate how well our model is doing. There are various mechanisms for doing so, but first let's do quick recap of them.
 
 Accuracy measures how often the classifier makes the correct prediction. It’s the ratio of the number of correct predictions to the total number of predictions (the number of test data points).
@@ -78,5 +83,6 @@ True Positives/(True Positives + False Negatives)
 
 For classification problems that are skewed in their classification distributions like in our case, for example if we had a 100 text messages and only 2 were spam and the rest 98 weren't, accuracy by itself is not a very good metric. We could classify 90 messages as not spam(including the 2 that were spam but we classify them as not spam, hence they would be false negatives) and 10 as spam(all 10 false positives) and still get a reasonably good accuracy score. For such cases, precision and recall come in very handy. These two metrics can be combined to get the F1 score, which is weighted average of the precision and recall scores. This score can range from 0 to 1, with 1 being the best possible F1 score.
 
-#### Step - 6
-Conclusion: One of the major advantages that Naive Bayes has over other classification algorithms is its ability to handle an extremely large number of features. In our case, each word is treated as a feature and there are thousands of different words. Also, it performs well even with the presence of irrelevant features and is relatively unaffected by them. The other major advantage it has is its relative simplicity. Naive Bayes' works well right out of the box and tuning it's parameters is rarely ever necessary, except usually in cases where the distribution of the data is known. It rarely ever overfits the data. Another important advantage is that its model training and prediction times are very fast for the amount of data it can handle. All in all, Naive Bayes' really is a gem of an algorithm!
+## Step - 6
+### Conclusion: 
+One of the major advantages that Naive Bayes has over other classification algorithms is its ability to handle an extremely large number of features. In our case, each word is treated as a feature and there are thousands of different words. Also, it performs well even with the presence of irrelevant features and is relatively unaffected by them. The other major advantage it has is its relative simplicity. Naive Bayes' works well right out of the box and tuning it's parameters is rarely ever necessary, except usually in cases where the distribution of the data is known. It rarely ever overfits the data. Another important advantage is that its model training and prediction times are very fast for the amount of data it can handle. All in all, Naive Bayes' really is a gem of an algorithm!
